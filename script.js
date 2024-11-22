@@ -332,7 +332,28 @@ function clearBoard() {
 // Once you get rest of the rest of the assignment completed, work on making this function
 // calculate the best hand total between A = 1 and A = 11. Hint: there can only be one high ace in a hand
 function getHandTotal(hand) {
-
+    let total = 0;
+    for (let i = 0; i < hand.length; i++){
+        let current = hand[i].charAt(0);
+        if (current == "A") {
+            total += 1;
+        }
+        else if (current == "T") {
+            total += 10;
+        }
+        else if (current == "J") {
+            total += 10;
+        }
+        else if (current == "Q") {
+            total += 10;
+        }
+        else if (current == "K") {
+            total += 10;
+        }
+        else {
+            total += parseInt(current);
+        }
+    }
 }
 
 // Adds a card to the player's hand array and updates UI with the card
@@ -340,6 +361,8 @@ function getHandTotal(hand) {
 // TODO: Implement this function
 function playerHit() {
 
+
+    checkPlayer21OrBust();
 }
 
 // Adds a card to the dealer's hand array and updates UI with the card
